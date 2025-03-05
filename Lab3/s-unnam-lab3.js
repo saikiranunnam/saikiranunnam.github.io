@@ -73,6 +73,7 @@ celsiusToFahrenheit("100");
 console.log("\n");
 
 // Exercise #5 - Sorts people by age and logs their name, age, and city.
+console.log("Exercise #5: Sort people object");
 function sortPeopleByAge(people) {
   people.sort((a, b) => a.age - b.age);
   return people.map(person => `${person.name} is ${person.age} and from ${person.city}`);
