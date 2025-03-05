@@ -73,29 +73,27 @@ celsiusToFahrenheit("100");
 console.log("\n");
 
 // Exercise #5 - Sorts people by age and logs their name, age, and city.
-console.log("Exercise #5: Sorting People by Age");
 function sortPeopleByAge(people) {
-    let sortedPeople = people.sort((a, b) => a.age - b.age);
-    let introductions = sortedPeople.map(p => `${p.name} is ${p.age} and from ${p.city}`);
-    introductions.forEach(intro => console.log(intro));
+  people.sort((a, b) => a.age - b.age);
+  return people.map(person => `${person.name} is ${person.age} and from ${person.city}`);
 }
 
 // Demonstration
-const peopleArray1 = [
-    { name: "Ajay", age: 25, city: "Boston" },
-    { name: "Nihal", age: 22, city: "Chicago" },
-    { name: "Siry", age: 30, city: "Dallas" },
-    { name: "Praneeth", age: 28, city: "Los Angeles" },
-    { name: "Siddu", age: 21, city: "Florida" }
+const people1 = [
+  { name: 'Ajay', age: 25, city: 'Boston' },
+  { name: 'Nihal', age: 20, city: 'Chicago' },
+  { name: 'Siry', age: 30, city: 'Dallas' },
+  { name: 'Praneeth', age: 22, city: 'Los Angeles' },
+  { name: 'Siddu', age: 28, city: 'Florida' }
 ];
 
-const peopleArray2 = [
-    { name: "Akshith", age: 40, city: "Miami" },
-    { name: "Uma", age: 35, city: "Seattle" },
-    { name: "Harshu", age: 27, city: "Austin" },
-    { name: "Kaushik", age: 50, city: "New York" },
-    { name: "Shreya", age: 32, city: "San Diego" }
+const people2 = [
+  { name: 'Akshith', age: 34, city: 'Miami' },
+  { name: 'Uma', age: 40, city: 'Seattle' },
+  { name: 'Harshu', age: 25, city: 'Austin' },
+  { name: 'Kaushik', age: 18, city: 'New York' },
+  { name: 'Shreya', age: 29, city: 'San Diego' }
 ];
 
-sortPeopleByAge(peopleArray1);
-sortPeopleByAge(peopleArray2);
+console.log(sortPeopleByAge(people1));
+console.log(sortPeopleByAge(people2));
