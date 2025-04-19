@@ -1,33 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ITMD-541_LAB-1</title>
-    <link rel="stylesheet" href="intro.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Good Tip Calculator</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+  <div class="container">
+    <form id="tipForm">
+      <p class="lab-title">ITMD 541 - Lab5 - Tip Calculator</p>
+      <h1>💰 Good Tip Calculator</h1>
 
-<div class="main-box">
-  
-  <h1>SAI KIRAN UNNAM</h1>
+      <label for="billTotal">Bill Total (<span class="currency-symbol">$</span>):</label>
+      <input type="text" id="billTotal" placeholder="Enter amount" />
 
-  <section class="small-box">
-    <h2>Introduction</h2>
-    <p>I'm from Hyderabad, India. I've lived in Illinois for almost a year now. I enjoy cricket, squash, horseback riding, and watching movies.</p>
-  </section>
+      <label for="totalWithTax">Total with Tax (11%) (<span class="currency-symbol">$</span>):</label>
+      <input type="text" id="totalWithTax" disabled />
 
-  <section class="small-box">
-    <h2>Education</h2>
-    <p>I earned a :</p>
-    <ul>
-      <li>Master's in Information Technology and Management from Illinois Tech, Chicago. (Currently pursuing )</li>
-      <li>B.Tech in Information Technology from VNR VJIET, Hyderabad, Telangana.</li>
-      <li>Developed a small fashion web page for a college hackathon.</li>
-    </ul>
-  </section>
+      <label for="tipSlider">Tip %:</label>
+      <input type="range" id="tipSlider" min="0" max="100" value="0" />
 
-</div>
+      <label for="tipPercent">Tip Percentage:</label>
+      <input type="text" id="tipPercent" disabled />
 
+      <label for="tipAmount">Tip Amount (<span class="currency-symbol">$</span>):</label>
+      <input type="text" id="tipAmount" disabled />
+
+      <label for="totalWithTip">Total with Tip (<span class="currency-symbol">$</span>):</label>
+      <input type="text" id="totalWithTip" disabled />
+
+      <label for="totalWithTipTax">Total with Tip & Tax (<span class="currency-symbol">$</span>):</label>
+      <input type="text" id="totalWithTipTax" disabled />
+
+      <label for="currency">Convert Currency:</label>
+      <select id="currency">
+        <option value="usd">USD</option>
+        <option value="inr">Indian Rupee</option>
+        <option value="eur">Euro</option>
+      </select>
+      <p id="convertedTotal"></p>
+
+      <p class="conversion-note">
+        Currency conversion: <br>
+        $1 USD = €0.95 EUR for EUROS<br>
+        $1 USD = ₹85 INR for Rupees
+      </p>
+    </form>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
