@@ -2,52 +2,58 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Good Tip Calculator</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sunrise & Sunset Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <form id="tipForm">
-      <p class="lab-title">ITMD 541 - Lab5 - Tip Calculator</p>
-      <h1>💰 Good Tip Calculator</h1>
+  <header>
+    <h2 class="subheading">ITMD 541 - Lab 6</h2>
+    <h1><span>Sunrise & Sunset Dashboard</span></h1>
+  </header>
 
-      <label for="billTotal">Bill Total (<span class="currency-symbol">$</span>):</label>
-      <input type="text" id="billTotal" placeholder="Enter amount" />
-
-      <label for="totalWithTax">Total with Tax (11%) (<span class="currency-symbol">$</span>):</label>
-      <input type="text" id="totalWithTax" disabled />
-
-      <label for="tipSlider">Tip %:</label>
-      <input type="range" id="tipSlider" min="0" max="100" value="0" />
-
-      <label for="tipPercent">Tip Percentage:</label>
-      <input type="text" id="tipPercent" disabled />
-
-      <label for="tipAmount">Tip Amount (<span class="currency-symbol">$</span>):</label>
-      <input type="text" id="tipAmount" disabled />
-
-      <label for="totalWithTip">Total with Tip (<span class="currency-symbol">$</span>):</label>
-      <input type="text" id="totalWithTip" disabled />
-
-      <label for="totalWithTipTax">Total with Tip & Tax (<span class="currency-symbol">$</span>):</label>
-      <input type="text" id="totalWithTipTax" disabled />
-
-      <label for="currency">Convert Currency:</label>
-      <select id="currency">
-        <option value="usd">USD</option>
-        <option value="inr">Indian Rupee</option>
-        <option value="eur">Euro</option>
+  <main>
+    <!-- Location Selection -->
+    <section id="location-form">
+      <label for="location-select">Select a location:</label>
+      <select id="location-select">
+        <option value="">-- Choose a Location --</option>
+        <option value="40.7128,-74.0060">New York, NY</option>
+        <option value="34.0522,-118.2437">Los Angeles, CA</option>
+        <option value="29.7604,-95.3698">Houston, TX</option>
+        <option value="33.4484,-112.0740">Phoenix, AZ</option>
+        <option value="39.7392,-104.9903">Denver, CO</option>
+        <option value="47.6062,-122.3321">Seattle, WA</option>
+        <option value="25.7617,-80.1918">Miami, FL</option>
+        <option value="38.9072,-77.0369">Washington, DC</option>
+        <option value="37.7749,-122.4194">San Francisco, CA</option>
+        <option value="42.3601,-71.0589">Boston, MA</option>
       </select>
-      <p id="convertedTotal"></p>
+      <button id="current-location-btn">📍 Use My Current Location</button>
+    </section>
 
-      <p class="conversion-note">
-        Currency conversion: <br>
-        $1 USD = €0.95 EUR for EUROS<br>
-        $1 USD = ₹85 INR for Rupees
-      </p>
-    </form>
-  </div>
+    <!-- Results Display -->
+    <section id="results">
+      <div id="today" class="result-card">
+        <h2>Today</h2>
+        <p class="placeholder">Select a location to view data.</p>
+      </div>
+      <div id="tomorrow" class="result-card">
+        <h2>Tomorrow</h2>
+        <p class="placeholder">Select a location to view data.</p>
+      </div>
+    </section>
+
+    <!-- Error Display -->
+    <div id="error" class="hidden"></div>
+
+    <!-- Footer -->
+    <footer>
+      <p>Powered by <a href="https://sunrisesunset.io/api/" target="_blank">sunrisesunset.io API</a></p>
+    </footer>
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>
